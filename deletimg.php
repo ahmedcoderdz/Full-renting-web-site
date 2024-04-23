@@ -18,7 +18,7 @@ if (isset($_GET['idpost']) && isset($_GET['idimg'])) {
     $count = $conect->query("SELECT COUNT(*) FROM image WHERE idpropriete='$idp' ");
     $cnt = $count->fetch_assoc();
 
-    if ($cnt['COUNT(*)'] >= 2) {
+    if ($cnt['COUNT(*)'] >= 2) { //supprémer seulement dans le cas il y'à plue que 2 img.
         $sqlnom = $conect->query("SELECT * FROM image WHERE idimg='$idimg' ");
         $nom = $sqlnom->fetch_assoc();
         unlink('img/'.$nom['img']);
@@ -27,6 +27,7 @@ if (isset($_GET['idpost']) && isset($_GET['idimg'])) {
 
     header('location: infoannc.php?idpost='.$idp);
 }else {
+    $_SESSION['msg'] = "Vous ne pouvez pas poster un annonce sans images!";
     header('location: infoannc.php?idpost='.$idp);
 }
 
