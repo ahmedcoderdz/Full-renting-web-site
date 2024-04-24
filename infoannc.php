@@ -83,15 +83,15 @@ if (isset($_GET['idpost'])) {
         <br><form action="editimg.php?idpost='.$idp.'&&idimg='.$img['idimg'].'" method="POST" enctype="multipart/form-data">
         <p>|importe ici pour remplacer cette photo:(png, jpg ou jpeg)|</p>
         <input type="file" name="new_img">
-        <input type="submit" name="img_edit" value="Modifier img">
+        <input type="submit" name="img_edit" value="Modifié l\'img">
         <a href="deletimg.php?idimg='.$img['idimg'].'&&idpost='.$idp.'">Supprimer img</a></td>'; 
+        echo '</form>';
         if ($tr >= 3) {//limiter les colonne du tableau
             $tr = 1;
             echo '</tr>';
         }
         $tr++;
     }
-    echo '</form>';
 echo '<table>';
 echo '<hr>';
     echo '<p>prix: '.$infopost['prix'].' da(/nuit)</p>';
