@@ -9,6 +9,11 @@ if (!isset($_SESSION['email']) || !isset($_SESSION['password'])) { //pour sucuri
 include("connexion.php"); //connecté avec base des données.
 $email = $_SESSION['email'];
 
+	if (isset($_SESSION['msg']) && $_SESSION['msg'] != '') {
+        echo '<script>alert("'.$_SESSION['msg'].'");</script>';
+        unset($_SESSION['msg']);
+    }
+
 $r = $conect->query("SELECT id_l, pre_l, nom_l FROM locataire WHERE email_l='$email'");
 $id = $r->fetch_assoc();
 $_SESSION['$id'] = $id['id_l']; //pour garder id.
