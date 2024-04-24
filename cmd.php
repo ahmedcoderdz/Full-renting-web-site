@@ -68,13 +68,14 @@ background-color:#1585c0;
 <br><br>
 
 	<?php
-    echo '<table bgcolor="black">
+    echo '<table bgcolor="white">
     <tr bgcolor="Gray">
         <th> id commande </th>
         <th> Num tel1 </th>
         <th> Num tel2 </th>
         <th> Date d\'arrivée </th>
         <th> Durée(/jr) </th>
+        <th> Prix(/nuit) </th>
         <th> Lien d\'annonce </th>
     </tr>
 
@@ -93,6 +94,7 @@ background-color:#1585c0;
           echo '<td>'.$cmd['tel2'].'</td>';
           echo '<td>'.$cmd['date_depart'].'</td>';
           echo '<td>'.$cmd['duree'].'</td>';
+          echo '<td>'.$info['prix'].' (DA)</td>';
           if (strlen($info['titre']) < 23) {
             echo '<td> <a href="infoannc.php?idpost='.$idp.'">'.$info['titre'].'</a></td>';
           }else{
