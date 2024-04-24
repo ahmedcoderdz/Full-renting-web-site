@@ -93,7 +93,7 @@ background-color:#1585c0;
           echo '<td>'.$cmd['tel1'].'</td>';
           echo '<td>'.$cmd['tel2'].'</td>';
           echo '<td>'.$cmd['date_depart'].'</td>';
-          echo '<td>'.$cmd['duree'].'</td>';
+          echo '<td>'.$cmd['duree'].' (jr)</td>';
           echo '<td>'.$info['prix'].' (DA)</td>';
           if (strlen($info['titre']) < 23) {
             echo '<td> <a href="infoannc.php?idpost='.$idp.'">'.$info['titre'].'</a></td>';
