@@ -121,12 +121,12 @@ hr {
             $sta = $conect->query("SELECT COUNT(*) FROM command WHERE idpropriete='$ligne[idpropriete]' ");
             $cnt = $sta->fetch_assoc();
             $total  = $total + $cnt['COUNT(*)']; //compteur de cmd
-            $prix_T = ($cnt['COUNT(*)'])*($ligne['prix']);
+            $prix_T = $prix_T + (($cnt['COUNT(*)'])*($ligne['prix'])); //la somme des commands de chaque announce ...etc.
         }
         echo '<hr>';
         echo '<p>Totale des réservations: '.$total.'</p>';
         echo '<hr>';
-        echo '<p>Prix total des réservation: '.$prix_T.' DA</p>';
+        echo '<p>Prix total des réservation: '.$prix_T.' (DA)</p>';
        //  $conect->query("SELECT SUM() FROM command WHERE idpropriete='$ligne[idpropriete]' ");
         //echo '<p>Proprité qu\'à max des réservation: '.$total.'</p>';
 
